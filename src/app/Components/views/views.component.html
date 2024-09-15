@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Todos los productos</h2>
+  <div class="row">
+    <div  *ngFor="let i of mode | paginate: { itemsPerPage: 8, currentPage: pag }" class="col-lg-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="imag">
+            <img src={{i.images}} alt="">
+          </div>
+          <h4>{{i.name}}</h4>
+          <span>Precio</span>
+          <p>{{i.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="pag = $event"></pagination-controls>
+</div>
+

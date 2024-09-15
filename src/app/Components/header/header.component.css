@@ -1,0 +1,50 @@
+
+img{
+  width: 130px;
+
+}
+/*
+nav{
+  background-color: rgb(124, 5, 5);
+}
+*/
+.logo{
+  height: 100px;
+}
+/*
+ul{
+  text-align: end;
+}
+*/
+
+.carrito{
+  text-align: end;
+}
+nav {
+  background-color: #701717; /* Color de fondo */
+  position: fixed; /* Fijo en la parte superior */
+  width: 100%; /* Ancho completo */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+nav ul {
+  list-style-type: none; /* Sin viñetas */
+  margin: 0; /* Sin márgenes */
+  padding: 0; /* Sin relleno */
+  display: flex; /* Utiliza flexbox para alinear los elementos */
+}
+
+nav ul li {
+  float: left; /* Alinea horizontalmente */
+}
+
+nav ul li a {
+  display: block; /* Hace que el enlace ocupe todo el espacio del li */
+  padding: 14px 20px; /* Espaciado interno */
+  color: white; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+}
+
+nav ul li a:hover {
+  background-color: #555; /* Color de fondo al pasar el mouse */
+}
