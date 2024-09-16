@@ -16,9 +16,14 @@ ul{
   text-align: end;
 }
 */
+.cart{
+  float: right;
+  margin-top: 10px;
+  margin-right: 30px;
+}
 
 .carrito{
-  text-align: end;
+  width: 50px;
 }
 nav {
   background-color: #701717; /* Color de fondo */

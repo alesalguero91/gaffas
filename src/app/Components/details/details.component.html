@@ -1,1 +1,9 @@
-<p>details works!</p>
+<div class="container">
+  <div *ngFor="let i of item">
+    <div>
+      <img src={{i.images}} alt="">
+    </div>
+    <h3>{{i.name}}</h3>
+    <span>{{i.price}}</span>
+  </div>
+</div>

@@ -18,6 +18,9 @@ export class ViewsComponent {
   constructor(){
   }
 
+
+
+
   ngOnInit(): void {
     console.log(this.mode[0])
 
