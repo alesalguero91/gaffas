@@ -9,3 +9,8 @@
 image{
   width: 600px;
 }
+
+.btnDetails{
+  text-align: center;
+  margin: 15px;
+}
