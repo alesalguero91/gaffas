@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CarritoService } from './Services/carrito.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RamiroWeb';
+
+  constructor(private cartServ: CarritoService){}
+
+  ngOnInit(){
+
+  }
 }

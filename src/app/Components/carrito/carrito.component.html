@@ -1,1 +1,12 @@
-<p>carrito works!</p>
+
+<div class="container">
+  <h2>Carrito de Compras</h2>
+
+  <ul>
+    <li *ngFor="let item of cartItems">
+      {{ item.name }} - {{ item.price }}
+      <button (click)="removeFromCart(item.name)">Eliminar</button>
+    </li>
+  </ul>
+</div>
+

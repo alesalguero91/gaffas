@@ -1,9 +1,14 @@
+<app-header></app-header>
 <div class="container">
-  <div *ngFor="let i of item">
+  <div >
     <div>
-      <img src={{i.images}} alt="">
+      <img src={{item.images}} alt="">
     </div>
-    <h3>{{i.name}}</h3>
-    <span>{{i.price}}</span>
+    <h3>{{item.name}}</h3>
+    <span>{{item.price}}</span>
+    <div>
+      <button (click)="addToCart(item)">Agregar al carrito</button>
+    </div>
   </div>
+
 </div>

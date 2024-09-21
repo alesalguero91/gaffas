@@ -27,7 +27,6 @@ ul{
 }
 nav {
   background-color: #701717; /* Color de fondo */
-  position: fixed; /* Fijo en la parte superior */
   width: 100%; /* Ancho completo */
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
