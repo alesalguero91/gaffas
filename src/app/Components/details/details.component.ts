@@ -13,11 +13,16 @@ import { CarritoService } from 'src/app/Services/carrito.service';
 export class DetailsComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private carritoServ: CarritoService) { }
 
+  quan:number=1
+  valu!:number
+  payment:number=1
+
+  bandera=false
   producto = products
   valCuotas!:number
 
   tasa=0.078
-  nper=6
+
   vf = 0
 
 
@@ -49,13 +54,14 @@ export class DetailsComponent {
 
 //Empezamos aqui
   addToCart(product: Product) {
+    product.quantity=this.quan
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const existingProduct = cart.find((item: Product) => item.name === product.name);
 
     if (existingProduct) {
-      existingProduct.quantity += 1; // Incrementa la cantidad si ya está en el carrito
+      existingProduct.quantity += this.quan; // Incrementa la cantidad si ya está en el carrito
     } else {
-      cart.push({ ...product, quantity: 1 }); // Añade el nuevo producto con cantidad 1
+      cart.push({ ...product, quantity: this.quan, payment:this.payment, value: this.valu }); // Añade el nuevo producto con cantidad 1
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -69,9 +75,44 @@ export class DetailsComponent {
 
   calcularPago(tasa: number, nper: number, va: number, vf: number = 0) {
     const factor = Math.pow(1 + tasa, nper);
-    this.valCuotas=(tasa === 0) ? -(va + vf) / nper : -(va * tasa * factor / (factor - 1) + vf / factor);
+    this.valCuotas=((tasa === 0) ? -(va + vf) / nper : -(va * tasa * factor / (factor - 1) + vf / factor)) * -1;
     console.log(this.valCuotas)
+    this.cambBand2()
   }
 
+
+  ///composicion d multipl clh+
+
+  lista: string[] = ["Opción 1", "Opción 2", "Opción 3", "Opción 4"];
+  seleccionados: string[] = [];
+
+  cambiarBandera(){
+    if(this.bandera == false){
+      this.bandera = true
+    }
+  }
+
+  variante!: number
+
+
+  cancelar(){
+    this.valu = this.item.price
+  }
+
+  sixPay(){
+    this.payment=6
+    this.valu= this.item.price/6
+  }
+
+  specPay(){
+    this.payment= this.variante
+    this.valu= this.valCuotas
+  }
+
+  bandera2=false
+
+  cambBand2(){
+    this.bandera2=true
+  }
 }
 

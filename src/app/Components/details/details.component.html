@@ -10,9 +10,49 @@
   </div>
   <p>6 cuotas de $ {{item.price / 6 | number: '1.0-0'}}</p>
 
+  <div>
+    <h3>Seleccionar plan de pago</h3>
+    <br>
+    <div>
+      <label for="quantity">Cantidad:</label>
+      <input type="number" id="numero" name="numero" value="1" min="1" max="100" [(ngModel)]="quan">
+    </div>
+  </div>
+
+
+  <div class="FormaDePago">
+    <div class="card">
+      <div class="card-body">
+        <div id="cancelacion">
+          <p>Cancelar la totalidad de $ {{item.price | number: "1.0-0"}} <button (click)="cancelar()" class="seleccion">Seleccionar</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div id="sinInteres">
+          <p>6 cuotas sin interes de $ {{item.price/6 | number: "1.0-0"}} <button (click)="sixPay()" class="seleccion">Seleccionar</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div *ngIf="!bandera">
+        <Button (click)="cambiarBandera()">Plan en mas cuotas</Button>
+      </div>
+      <div *ngIf="bandera">
+        <div class="card-body">
+          <label >Seleccione la ccantidad de cuotas </label>
+          <input type="number" id="numero" name="numero" value="7" min="7" max="100" [(ngModel)]="variante" (click)="calcularPago(tasa,variante,item.price)">
+          <br>
+          <p *ngIf="bandera2">{{variante}} cuotas de $ {{valCuotas| number: "1.0-0"}}  <button (click)="specPay()" class="seleccion">Seleccionar</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div>
     <button (click)="addToCart(item)">Agregar al carrito</button>
   </div>
+
 
 </div>

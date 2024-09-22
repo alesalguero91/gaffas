@@ -30,7 +30,8 @@ import { WppComponent } from './Components/wpp/wpp.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
