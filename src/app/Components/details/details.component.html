@@ -10,5 +10,8 @@
       <button (click)="addToCart(item)">Agregar al carrito</button>
     </div>
   </div>
+  <p>6 cuotas de $ {{item.price / 6}}</p>
+
+  <button (click)="calcularPago(tasa, nper, item.price, vf)">funcion pagos</button>
 
 </div>

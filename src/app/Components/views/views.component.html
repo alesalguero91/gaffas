@@ -10,7 +10,9 @@
           </div>
           <h4>{{i.name}}</h4>
           <span>Precio</span>
-          <p>{{i.price}}</p>
+          <p>$ {{i.price | number: '1.0-0'}}</p>
+          <br>
+          <span>6 cuotas sin interes de $ {{i.price / 6 | number: '1.0-0'}}</span>
         </div>
         <div class="btnDetails">
           <button class="btn btn-success" routerLink="/product/{{i.name}}">Ver detalle</button>

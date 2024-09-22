@@ -13,6 +13,7 @@ import { ViewsComponent } from './Components/views/views.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { DetailsComponent } from './Components/details/details.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
+import { WppComponent } from './Components/wpp/wpp.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CarritoComponent } from './Components/carrito/carrito.component';
     ViewsComponent,
     FooterComponent,
     DetailsComponent,
-    CarritoComponent
+    CarritoComponent,
+    WppComponent
   ],
   imports: [
     BrowserModule,

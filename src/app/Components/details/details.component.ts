@@ -14,6 +14,11 @@ export class DetailsComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private carritoServ: CarritoService) { }
 
   producto = products
+  valCuotas!:number
+
+  tasa=0.078
+  nper=6
+  vf = 0
 
 
   carti = cart
@@ -58,6 +63,11 @@ export class DetailsComponent {
     console.log(cart)
   }
 
+  calcularPago(tasa: number, nper: number, va: number, vf: number = 0) {
+    const factor = Math.pow(1 + tasa, nper);
+    this.valCuotas=(tasa === 0) ? -(va + vf) / nper : -(va * tasa * factor / (factor - 1) + vf / factor);
+    console.log(this.valCuotas)
+  }
 
 }
 
