@@ -61,6 +61,7 @@ export class DetailsComponent {
     localStorage.setItem('cart', JSON.stringify(cart));
 
     console.log(cart)
+    alert("Agregado")
   }
 
   calcularPago(tasa: number, nper: number, va: number, vf: number = 0) {

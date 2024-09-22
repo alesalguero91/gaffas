@@ -24,6 +24,8 @@ ul{
 
 .carrito{
   width: 50px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 nav {
   background-color: #701717; /* Color de fondo */
@@ -52,3 +54,24 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #555; /* Color de fondo al pasar el mouse */
 }
+
+
+button {
+  background-image: url("../../../assets/images/cartIcon.png");
+  background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+  background-position: center; /* Centra la imagen */
+  background-color: #701717;
+  width: 50px;
+}
+.let{
+  text-align: center;
+  color: lightcyan;
+  position: top;
+}
+
+
+
+.cart:hover{
+  background-color: #555; /* Color de fondo al pasar el mouse */
+}
+
