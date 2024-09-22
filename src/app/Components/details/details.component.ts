@@ -62,6 +62,9 @@ export class DetailsComponent {
 
     console.log(cart)
     alert("Agregado")
+
+    this.router.navigate([''])
+
   }
 
   calcularPago(tasa: number, nper: number, va: number, vf: number = 0) {
