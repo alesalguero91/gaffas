@@ -3,6 +3,10 @@ img{
   width: 130px;
 
 }
+
+.cart{
+  width: 100px;
+}
 /*
 nav{
   background-color: rgb(124, 5, 5);
@@ -26,6 +30,8 @@ ul{
   width: 50px;
   margin-top: 20px;
   margin-right: 20px;
+  text-align: center;
+  text-decoration: none;
 }
 nav {
   background-color: #701717; /* Color de fondo */
