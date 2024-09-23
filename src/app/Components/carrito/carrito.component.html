@@ -1,18 +1,28 @@
-
 <div class="container">
-  <h2>Carrito de Compras</h2>
-
-  <ul>
-    <li *ngFor="let item of cartItems">
-      {{item.quantity}} - {{ item.name }}  en {{item.payment}} pago de $ {{item.value| number: "1.0-0"}} precio subtotal $<p [(ngModel)]="subTotal">{{item.quantity * item.value | number: "1.0-0"}}</p>
-      <button (click)="removeFromCart(item.name)">Eliminar</button>
-    </li>
-  </ul>
-  <div>
-    <p>El total del presupuesto para hacer el pedido es de: $ {{total | number:"1.0-0"}}</p>
+  <div style="text-align: end;">
+    <button (click)="removeAll()">Vaciar carrito</button>
   </div>
+  <div *ngIf="cartItems.length>0">
+    <h2>Carrito de Compras</h2>
+
+    <ul>
+      <li *ngFor="let item of cartItems">
+        {{item.quantity}} - {{ item.name }} en {{item.payment}} pago de $ {{item.value| number: "1.0-0"}} precio
+        subtotal $<p [(ngModel)]="subTotal">{{item.quantity * item.value | number: "1.0-0"}}</p>
+        <button (click)="removeFromCart(item.name)">Eliminar</button>
+      </li>
+    </ul>
+    <div>
+      <p>El total del presupuesto para hacer el pedido es de: $ {{total | number:"1.0-0"}}</p>
+    </div>
+    <div>
+      <button (click)="HacerElEncargo()" class="btn btn-success">hacer el pedido</button>
+    </div>
+  </div>
+
+  <div *ngIf="cartItems.length===0" style="text-align: center;">
+    <h6>El carrito está vacío</h6>
+  </div>
+
+
 </div>
-<button (click)="HacerElEncargo()">hacer el pedido</button>
-
-
-

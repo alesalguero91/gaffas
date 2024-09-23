@@ -74,10 +74,16 @@ export class DetailsComponent {
   }
 
   calcularPago(tasa: number, nper: number, va: number, vf: number = 0) {
-    const factor = Math.pow(1 + tasa, nper);
+    if(nper > 6){
+      const factor = Math.pow(1 + tasa, nper);
     this.valCuotas=((tasa === 0) ? -(va + vf) / nper : -(va * tasa * factor / (factor - 1) + vf / factor)) * -1;
     console.log(this.valCuotas)
     this.cambBand2()
+    }
+    else{
+      alert("Deben ser mas de 6 cuotas")
+    }
+
   }
 
 

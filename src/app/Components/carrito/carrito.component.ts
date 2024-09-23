@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { cart } from 'src/app/models/carrito';
 import { Product } from 'src/app/models/product';
 
 @Component({
@@ -32,7 +33,7 @@ export class CarritoComponent {
 
   removeFromCart(productId: string) {
     this.cartItems = this.cartItems.filter(item => item.name !== productId);
-    this.sumarSubs()
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
   sumarSubs(){
     this.total = this.subTotal.reduce((valorAnterior, valorActual) => valorAnterior + valorActual, 0);
@@ -67,6 +68,11 @@ export class CarritoComponent {
     this.mensaje= plantilla
     console.log(this.mensaje)
 
+  }
+
+  removeAll(){
+    localStorage.clear()
+    this.loadCart()
   }
 
 }

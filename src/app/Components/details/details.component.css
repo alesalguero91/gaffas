@@ -1,3 +1,15 @@
 .card{
   margin: 5px;
 }
+
+.btn{
+  text-align: end;
+}
+
+.card-body:hover{
+  background-color: rgb(245, 236, 233);
+}
+
+.FormaDePago{
+  margin: 50px;
+}

@@ -1,14 +1,15 @@
 
 <div class="container">
-  <div >
+  <div style="text-align: center;">
     <div>
       <img src={{item.images}} alt="">
     </div>
     <h3>{{item.name}}</h3>
     <span> $ {{item.price | number: '1.0-0'}}</span>
+    <p>6 cuotas de $ {{item.price / 6 | number: '1.0-0'}}</p>
 
   </div>
-  <p>6 cuotas de $ {{item.price / 6 | number: '1.0-0'}}</p>
+
 
   <div>
     <h3>Seleccionar plan de pago</h3>
@@ -24,34 +25,34 @@
     <div class="card">
       <div class="card-body">
         <div id="cancelacion">
-          <p>Cancelar la totalidad de $ {{item.price | number: "1.0-0"}} <button (click)="cancelar()" class="seleccion">Seleccionar</button></p>
+          <p>Cancelar la totalidad de $ {{item.price | number: "1.0-0"}} <button (click)="cancelar()" class="btn btn-primary">Seleccionar</button></p>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
         <div id="sinInteres">
-          <p>6 cuotas sin interes de $ {{item.price/6 | number: "1.0-0"}} <button (click)="sixPay()" class="seleccion">Seleccionar</button></p>
+          <p>6 cuotas sin interes de $ {{item.price/6 | number: "1.0-0"}} <button (click)="sixPay()" class="btn btn-primary">Seleccionar</button></p>
         </div>
       </div>
     </div>
     <div class="card">
-      <div *ngIf="!bandera">
-        <Button (click)="cambiarBandera()">Plan en mas cuotas</Button>
+      <div *ngIf="!bandera" style="text-align: center;">
+        <Button (click)="cambiarBandera()" style="text-align: center;" class="btn btn-light">Plan en mas cuotas</Button>
       </div>
       <div *ngIf="bandera">
-        <div class="card-body">
-          <label >Seleccione la ccantidad de cuotas </label>
+        <div class="card-body" >
+          <label >Seleccione la cantidad de cuotas </label>
           <input type="number" id="numero" name="numero" value="7" min="7" max="100" [(ngModel)]="variante" (click)="calcularPago(tasa,variante,item.price)">
           <br>
-          <p *ngIf="bandera2">{{variante}} cuotas de $ {{valCuotas| number: "1.0-0"}}  <button (click)="specPay()" class="seleccion">Seleccionar</button></p>
+          <p *ngIf="bandera2">{{variante}} cuotas de $ {{valCuotas| number: "1.0-0"}}  <button (click)="specPay()" class="btn btn-primary">Seleccionar</button></p>
         </div>
       </div>
     </div>
   </div>
 
-  <div>
-    <button (click)="addToCart(item)">Agregar al carrito</button>
+  <div style="text-align: center;">
+    <button (click)="addToCart(item)" class="btn btn-success">Agregar al carrito</button>
   </div>
 
 
