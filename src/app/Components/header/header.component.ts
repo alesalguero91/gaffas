@@ -19,4 +19,5 @@ export class HeaderComponent{
     console.log("esta", this.dive.length)
     this.cartServ.cargarProductos()
   }
+
 }

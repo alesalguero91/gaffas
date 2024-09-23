@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'', component:BodyComponent},
   {path:'product/:name', component:DetailsComponent},
   {path:'cart', component:CarritoComponent},
-  {path:'wpp', component:WppComponent}
+
 
 ];
 

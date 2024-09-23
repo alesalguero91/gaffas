@@ -4,13 +4,15 @@
 
   <ul>
     <li *ngFor="let item of cartItems">
-      {{item.quantity}} - {{ item.name }}  en {{item.payment}} pago de $ {{item.value| number: "1.0-0"}} precio subtotal $<p>{{item.quantity * item.value | number: "1.0-0"}}</p>
+      {{item.quantity}} - {{ item.name }}  en {{item.payment}} pago de $ {{item.value| number: "1.0-0"}} precio subtotal $<p [(ngModel)]="subTotal">{{item.quantity * item.value | number: "1.0-0"}}</p>
       <button (click)="removeFromCart(item.name)">Eliminar</button>
     </li>
   </ul>
+  <div>
+    <p>El total del presupuesto para hacer el pedido es de: $ {{total | number:"1.0-0"}}</p>
+  </div>
 </div>
-<div *ngFor="let i of cartItems">
+<button (click)="HacerElEncargo()">hacer el pedido</button>
 
-</div>
 
 
